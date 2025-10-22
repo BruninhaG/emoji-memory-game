@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #B877A8, #B8008A, #FF3366, #FFCC33, #CCFF33);
+  background-size: 300% 300%;
+  animation: gradientAnimation 8s ease infinite;
+}
+
+@keyframes gradientAnimation {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.container {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(12px);
+  border-radius: 16px;
+  padding: 20px 30px 40px;
+  text-align: center;
+  color: #fff;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+}
+
+h1 {
+  margin-bottom: 20px;
+  letter-spacing: 2px;
+}
+
+.game-board {
+  display: grid;
+  grid-template-columns: repeat(6, 80px);
+  gap: 10px;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.card {
+  width: 80px;
+  height: 80px;
+  background: white;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+  cursor: pointer;
+  transform: rotateY(0deg);
+  transition: transform 0.4s, background 0.4s;
+}
+
+.card.flipped {
+  background: #fff;
+  transform: rotateY(180deg);
+}
+
+.card.matched {
+  background: #CCFF33;
+  cursor: default;
+  transform: scale(1.05);
+}
+
+#resetButton {
+  background: white;
+  border: none;
+  padding: 10px 30px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+}
+
+#resetButton:hover {
+  background: #FF3366;
+  color: #fff;
+}
